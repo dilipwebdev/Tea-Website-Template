@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tea House</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+
+      .header_box {
+        width: 100%;
+        height: 80px;
+        background-color: rgb(12, 12, 12);
+        position: sticky;
+        z-index: 10;
+        top: -10px;
+      }
+
+
+      /* @media screen and(max-width:430px)
+      {
+        .header_box{
+          width: 430px;
+          height: 932px;
+        }
+      } */
+
+      .logo_img {
+        float: left;
+        width: 25%;
+        height: 80px;
+       
+         /* background-color: brown;  */
+      }
+
+      .logo_img img {
+        /* margin-left: 90px; */
+        position: absolute;
+        /* top: -10px; */
+        left: 90px;
+      }
+
+      /* spece */
+
+      .spec {
+        float: left;
+        width: 25%;
+        height: 80px;
+        /* background-color: rgb(178, 72, 72); */
+      }
+
+      /*nav_bar  */
+
+      .nav_bar {
+        float: left;
+        width: 45%;
+        height: 80px;
+        /* background-color: rgb(72, 155, 178); */
+      }
+
+      .nav_bar ul {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+        margin-left: 0px;
+        list-style: none;
+      }
+
+      .nav_bar ul li {
+        width: 100px;
+        height: 50px;
+        /* background-color: brown; */
+        margin-left: 20px;
+        /* color: cadetblue; */
+      }
+
+      .nav_bar ul li a {
+        text-decoration: none;
+        /* color: black; */
+        font-size: 19px;
+        color: #fff;
+
+      }
+
+      .list_pages {
+        width: 150px;
+        height: 140px;
+        background-color: rgb(26, 27, 25);
+        color: black;
+        /* margin-top: 25px; */
+        position: absolute;
+        top: 80px;
+        left: 1240px;
+        display: none;
+      }
+
+      li:hover .list_pages {
+        display: block;
+      }
+
+      .list_pages p {
+        margin-left: 10px;
+        margin-top: 10px;
+        color: black;
+
+      }
+
+      .list_pages p:hover {
+        transition: 1s;
+        /* transform: skew(20deg); */
+        background-color: rgb(158, 199, 199);
+      }
+
+      /* icon_bar */
+
+      .icon_bar {
+        float: left;
+        width: 5%;
+        height: 80px;
+        /* background-color: rgb(178, 173, 72); */
+      }
+
+      .icon_img {
+        width: 50%;
+        height: 50px;
+        /* background-color: aqua; */
+        margin-top: 30px;
+        margin-left: 20px;
+      }
+
+      .ri-search-line {
+        margin-top: 20px;
+      }
+
+      /* banner_logo */
+
+      .banner_logo {
+        width: 100%;
+        height: 800px;
+        background-color: rgb(173, 123, 123);
+      }
+      .banner_logo img {
+        width: 100%;
+        height: 800px;
+        /* filter: blur(5px); */
+        /* filter: grayscale(100%); */
+      }
+     
+      /* .banner_logo img:hover{
+        filter: brightness(100%);
+      } */
+
+
+      #banner_content {
+        position: absolute;
+        top: 320px;
+        left: 650px;
+      }
+
+      #main_content {
+        position: absolute;
+        top: 360px;
+        left: 480px;
+        font-size: 80px;
+        font-weight: bold;
+        color: rgb(6, 0, 0);
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+
+      #btn {
+        position: absolute;
+        top: 590px;
+        left: 680px;
+        width: 200px;
+        height: 50px;
+        border-radius: 50px;
+        border: none;
+      }
+
+      /* history_box */
+
+      .container {
+        width: 100%;
+        height: 750px;
+        background-color: rgb(174, 174, 183);
+        padding-top: 50px;
+      }
+
+      .main_container{
+        margin-left: 90px; 
+        max-width: 90%;
+        height: 700px;
+        /* background-color: brown; */
+      }
+
+      .row_container1{
+        float: left;
+        width: 50%;
+        height: 650px;
+      }
+    
+      .row_box1{
+        float: left;
+        width: 50%;
+        height: 650px;
+      }
+
+      .row_box1 img{
+        width: 320px;
+        height: 400px;
+      }
+
+      #img2{
+        margin-left: 170px;
+        margin-top: 20px;
+        width: 150px;
+        height: 200px;
+      }
+
+
+
+      .row_box2{
+        float: left;
+        width: 50%;
+        height: 650px;
+      }
+
+
+       .row_box2 img{
+        width: 150px;
+        height: 200px;
+       }
+     
+       #about{
+        width: 320px;
+        height: 400px;
+        margin-top: 20px;
+       }
+
+
+
+      .row_container2{
+        float: left;
+        width: 50%;
+        height: 650px;
+        
+      }
+
+
+      .row_container2a{
+        width: 100%;
+        height: 30px;
+        color: green;
+      }
+
+      .row_container2b{
+        width: 100%;
+        height: 90px;
+        font-size: 20px;
+        
+      }
+     
+      .row_container2c{
+        width: 100%;
+        height: 30px;
+        padding-top: 10px;
+      }
+
+
+
+      .line{
+        width: 50%;
+        height: 20px;
+      }
+
+      .main_line{
+        margin-top: 5px;
+        float: left;
+        width: 45%;
+        height: 4px;
+        background-color: rgb(37, 229, 15);
+
+      }
+
+      .main_line_img{
+        margin-top: 5px;
+        float: left;
+        width: 10%;
+        height: 4px;
+      }
+
+
+      .main_line_img h1{
+        margin-top: -75px;
+        margin-left: 5px;
+        font-size: 90px;
+
+      }
+      .end_line{
+        margin-top: 5px;
+        float: left;
+        width: 45%;
+        height: 4px;
+        background-color: rgb(37, 229, 15);
+      }
+
+      
+
+     .row_container2d{
+      margin-top: 30px;
+      width: 100%;
+      height: 190px;
+     }
+
+     .row_container2d img{
+      width: 190px;
+      height: 130px;
+     }
+
+     .row_container2d h2{
+      margin-top: -140px;
+      margin-left: 210px;
+     }
+    
+     .row_container2d p{
+      
+      margin-left: 210px;
+      font-size: 18px;
+     }
+
+
+
+     
+     .row_container2e{
+      width: 100%;
+      height: 190px;
+      
+     }
+
+     .row_container2e img{
+      width: 190px;
+      height: 130px;
+      margin-left: 470px;
+      margin-top: 30px;
+     }
+
+     .row_container2e h2{
+      margin-top: -140px;
+    
+     }
+    
+     .row_container2e p{
+      
+      /* margin-left: 210px; */
+      font-size: 18px;
+     }
+
+
+
+
+     /*container end  */
+      
+
+
+
+     .product{
+      width: 100%;
+      height: 700px;
+      /* background-color: rgb(204, 206, 206); */
+      background-image: url('mini images/background3 tea.avif');
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding-top: 50px;
+     }
+
+     .product_h2{
+      float: left;
+      width: 100%;
+      height: 30px;
+     }
+    
+     .product_h2 h2{
+      margin-left: 690px;
+      color: green;
+     }
+
+  
+     .product_h1{
+      margin-top: 20px;
+      float: left;
+      width: 100%;
+      height: 80px;
+     }
+     
+     .product_h1 h1{
+      margin-left: 590px;
+     }
+
+
+     .product_line{
+      margin-top: 20px;
+      float: left;
+      width: 100%;
+      height: 20px;    
+      /* background-color: yellow; */
+     }
+
+     .product_main{
+      margin-left: 150px;
+      width: 90%;
+      height: 10px;
+      /* background-color: aqua; */
+     }
+
+     .product_main_line{
+        margin-top: 5px;
+        margin-left: 390px;
+        float: left;
+        width: 15%;
+        height: 4px;
+        background-color: rgb(37, 229, 15);
+
+      }
+
+      .product_line_img{
+        margin-top: 5px;
+        float: left;
+        width: 3%;
+        height: 4px;
+      }
+
+
+      .product_line_img h1{
+        margin-top: -75px;
+        margin-left: 10px;
+        font-size: 90px;
+        
+      }
+      .product_end_line{
+        margin-top: 5px;
+        float: left;
+        width: 18%;
+        height: 4px;
+        background-color: rgb(37, 229, 15);
+      }
+
+     
+     .tea_product{
+      margin-top: 200px;
+      width: 100%;
+      height: 450px;
+      /* background-color: brown; */
+     }
+
+
+     .main_tea_product{
+      margin-left: 110px;
+      float: left;
+      width: 90%;
+      height: 400px;
+      /* background-color: cadetblue; */
+     }
+
+     .tea_product1
+     {
+      float: left;
+      width: 33.33%;
+      
+     }
+
+     .tea_product1:hover{
+      transition: 2s;
+      transform: skew(10deg);
+     }
+
+
+     .tea_product1 img{
+      width: 420px;
+      height: 290px;
+     }
+    
+     .green_content1{
+      width: 350px;
+      height: 90px;
+      background-color: rgb(237, 231, 226);
+      position: relative;  
+      top: -60px;
+      left: 30px;
+   
+     } 
+
+     .green_content1 h1{
+      margin-left: 100px;
+     }
+
+     .green_content1 p{
+      margin-left: 50px;
+      
+     }
+      
+     .tea_product2
+     {
+      float: left;
+      width: 33.33%;
+      height: 400px;
+     }
+
+
+     .tea_product2:hover{
+      transition: 2s;
+      transform: skew(10deg);
+     }
+
+     .tea_product2 img{
+      width: 420px;
+      height: 290px;
+     }
+    
+     .green_content2{
+      width: 350px;
+      height: 90px;
+      background-color: rgb(237, 231, 226);
+      position: relative;  
+      top: -60px;
+      left: 30px;
+   
+     } 
+
+     .green_content2 h1{
+      margin-left: 100px;
+     }
+
+     .green_content2 p{
+      margin-left: 50px;
+      
+     }
+
+     .tea_product3
+     {
+      float: left;
+      width: 33.33%;
+      height: 400px;
+     }
+   
+     .tea_product3:hover{
+      
+      transition: 2s;
+      transform: skew(10deg);
+     }
+
+
+     .tea_product3 img{
+      width: 420px;
+      height: 290px;
+     }
+    
+     .green_content3{
+      width: 350px;
+      height: 90px;
+      background-color: rgb(237, 231, 226);
+      position: relative;  
+      top: -60px;
+      left: 30px;
+   
+     } 
+
+     .green_content3 h1{
+      margin-left: 100px;
+     }
+
+     .green_content3 p{
+      margin-left: 50px;
+      
+     }
+
+     /*product end */
+
+     
+     
+      
+     .history_tea{
+      width: 100%;
+      height: 700px;
+      background-color: rgb(218, 237, 238);
+     }
+
+     .tea_img{
+      float: left;
+      width: 50%;
+      height: 700px;
+      /* background-color: chartreuse; */
+     }
+    
+     .tea_main_img{
+      margin-top: 60px;
+      margin-left: 50px;
+      float: left;
+      width: 90%;
+      height: 600px;
+      /* background-color: rgb(207, 221, 193); */
+     }
+
+     .tea_main_img img{
+      margin-left: 80px;
+     }
+
+
+
+   
+
+     .history_content{
+      float: left;
+      width: 50%;
+      height: 700px;
+     }
+
+
+     .history_h2{
+      margin-top: 120px;
+      width: 100%;
+      height: 20px;
+      color: rgb(105, 128, 0);
+     }
+   
+     .history_h1{
+      margin-top: 20px;
+      width: 100%;
+      height: 90px;
+     }
+
+
+     .history_line{
+      margin-top: 20px;
+        width: 50%;
+        height: 20px;
+      }
+
+      .history_main_line{
+        margin-top: 5px;
+        float: left;
+        width: 45%;
+        height: 4px;
+        background-color: rgb(37, 229, 15);
+
+      }
+
+      .history_main_line_img{
+        margin-top: 5px;
+        float: left;
+        width: 10%;
+        height: 4px;
+      }
+
+
+      .history_main_line_img h1{
+        margin-top: -75px;
+        margin-left: 10px;
+        font-size: 90px;
+
+      }
+      .history_end_line{
+        margin-top: 5px;
+        float: left;
+        width: 45%;
+        height: 4px;
+        background-color: rgb(37, 229, 15);
+      }
+
+
+
+      .history_paragraph1{
+        margin-top: 50px;
+        width: 100%;
+        height: 150px;
+        font-size: 20px;
+      }
+
+      #rm{
+        margin-top: 20px;
+        width: 190px;
+        font-size: 25px;
+        height: 50px;
+        border-radius: 20px;
+        background-color: rgb(49, 211, 49);
+        color: white;
+        border: none;
+      }
+
+      /* <!-- history_tea end --> */
+
+
+
+      .tea_drink{
+        width: 100%;
+        height: 600px;
+        background-color: rgb(103, 107, 107);
+        /* opacity: 30%; */
+        background-image: url('mini images/pexels-mareefe-1638280.jpg');
+        background-size: cover;
+      }
+
+
+      .tea_video{
+        margin-left: 90px;
+        float: left;
+        width: 90%;
+        height: 550px;
+        /* background-color: rgb(195, 87, 87); */
+      }
+
+      .tea_health{
+        float: left;
+        width: 50%;
+        height: 550px;
+        /* background-color: blueviolet; */
+      }
+
+      .tea_health img{
+        margin-top: 10px;
+        margin-left: 20px;
+        width: 490px;
+      
+      }
+      
+      .tea_health h1{
+        font-size: 40px;
+      }
+
+     #beauty{
+      font-size: 20px;
+     }
+
+      #ex{
+        padding: 15px 45px;
+        margin-left: 30px;
+        margin-top: 20px;
+        background-color: gold;
+      }
+
+
+
+      .tea_video_play{
+        float: left;
+        width: 50%;
+        height: 550px;
+      }
+
+      #teavideo{
+        /* margin-left: 60px; */
+        width: 100%;
+        height: 550px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="header_box">
+      <div class="logo_img">
+        <img src="mini images/logo (1).png" alt="" />
+      </div>
+
+      <div class="spec"></div>
+
+      <div class="nav_bar">
+        <ul>
+          <li><a href="#">HOME</a></li>
+          <li><a href="#">ABOUT</a></li>
+          <li><a href="#">PRODUCTS</a></li>
+          <li><a href="#">STORE</a></li>
+
+          <li>
+            <a href="#">PAGES <i class="ri-arrow-down-s-line"></i></a>
+            <div class="list_pages">
+              <p><a href="#">Features</a></p>
+              <p><a href="#">Blog Article</a></p>
+              <p><a href="#">Testimonial</a></p>
+              <p><a href="#">404 Page</a></p>
+            </div>
+          </li>
+
+          <li><a href="#">CONTACT</a></li>
+        </ul>
+      </div>
+
+      <div class="icon_bar">
+        <div class="icon_img">
+          |
+          <span
+            ><a style="text-decoration: none" href="#"
+              ><i class="ri-search-line"></i></a
+          ></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- /* header box end */ -->
+
+    <div class="banner_logo">
+      <img src="mini images/carousel-2.jpg" alt="" />
+      <h2 id="banner_content">
+        <span style="color: white">Welcome to</span><strong> TEA House</strong>
+      </h2>
+      <h1 id="main_content">
+        Organic & Quality <br />
+        &nbsp;&nbsp; Tea Production
+      </h1>
+      <button id="btn">Explore more</button>
+    </div>
+
+    <!-- banner logo end -->
+
+      <div class="container">
+          <div class="main_container">
+            <div class="row_container1">
+              <div class="row_box1">
+                <img src="mini images/about-1.jpg" alt="">
+                <img id="img2" src="mini images/about-3.jpg" alt="">
+              </div>
+
+              <div class="row_box2">
+                     <img src="mini images/about-4.jpg" alt=""> <br>
+                     <img id="about" src="mini images/about-2.jpg" alt="">
+              </div>
+
+            </div>
+
+            <div class="row_container2">
+              <div class="row_container2a"><h2>About Us</h2></div> <br>
+              <div class="row_container2b"><h1>The success history of TEA <br> House in 25 years</h1></div> <br>
+              <div class="row_container2c">
+                  <div class="line">
+                     <div class="main_line"></div>
+                     <div class="main_line_img"><h1>.</h1></div>
+                     <div class="end_line"></div>
+                  </div>
+                  </div>
+
+               <div class="row_container2d">
+                <img src="mini images/about-5.jpg" alt="">
+                <h2>Our tea is one of the most popular drinks in  <br>the world</h2> <br>
+                <p>Tempor erat elitr rebum at clita. Diam dolor diam <br> ipsum sit. Aliqu diam amet diam et eos. Chita erat <br> ipsum et lorem et sit</p>
+               </div>    
+           
+                <hr>
+               <div class="row_container2e">
+                <img src="mini images/about-6.jpg" alt="">
+                <h2>Daily use of a cup of tea is good for your <br> health</h2> <br>
+                <p>Tempor erat elitr rebum at clita. Diam dolor diam <br> ipsum sit. Aliqu diam amet diam et eos. Chita erat <br> ipsum et lorem et sit</p>
+               </div>   
+               
+                  
+            </div>
+          </div>
+      </div>
+
+      <!-- container end -->
+
+
+      <div class="product">
+        <div class="product_h2"><h2>Our Products</h2></div>
+        <div class="product_h1">
+         <h1>Tea has a complex positive <br> &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; effect on the body</h1>
+        </div>
+        
+        <div class="product_line">
+          <div class="product_main">
+          <div class="product_main_line"></div>
+          <div class="product_line_img"><h1>.</h1></div>
+          <div class="product_end_line"></div>  
+        </div>
+       </div> 
+
+
+         <div class="tea_product">
+          <div class="main_tea_product">
+           <div class="tea_product1">
+            <img src="mini images/product-1.jpg" alt="">
+            <div class="green_content1">
+            <h1>Green tea</h1>
+              <p>Diam dolor diam ipsum sit  diam amet <br>&nbsp;&nbsp; &nbsp;&nbsp; diam et eos.  Clita erat ipsum</p>
+            </div>
+           </div>
+             
+           <div class="tea_product2">
+            <img src="mini images/product-2.jpg" alt="">
+            <div class="green_content2">
+            <h1>Black tea</h1>
+              <p>Diam dolor diam ipsum sit  diam amet <br>&nbsp;&nbsp; &nbsp;&nbsp; diam et eos.  Clita erat ipsum</p>
+            </div>
+           </div>
+
+
+           <div class="tea_product3">
+            <img src="mini images/product-3.jpg" alt="">
+            <div class="green_content3">
+            <h1>Spiced tea</h1>
+              <p>Diam dolor diam ipsum sit  diam amet <br>&nbsp;&nbsp; &nbsp;&nbsp; diam et eos.  Clita erat ipsum</p>
+            </div>
+           </div>
+          </div>
+         </div>
+
+
+
+      </div>
+    
+     <!-- product end -->
+      
+
+      <div class="history_tea">
+        <div class="tea_img">
+          <div class="tea_main_img">
+            <img src="mini images/article.jpg" alt="">
+          </div>
+        </div>
+
+        <div class="history_content">
+          <div class="history_h2">
+            <h2>Featured Article</h2>
+          </div>
+
+            <div class="history_h1">
+              <h1>The history of tea leaf in the <br> world</h1>
+            </div>
+
+
+            <div class="history_line">
+              <div class="history_main_line"></div>
+              <div class="history_main_line_img"><h1>.</h1></div>
+              <div class="history_end_line"></div>
+           </div>
+
+
+           <div class="history_paragraph1">
+            <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam <br> et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna <br> dolore erat amet <br> <br>Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem <br> et sit, sed stet lorem  sit clita duo justo magna. Tempor erat elitr rebum at clita.</p>
+           </div>
+
+
+           <button id="rm">Read More</button>
+
+            
+        </div>
+      </div>
+
+      <!-- history_tea end -->
+
+      
+      <div class="tea_drink">
+        <div class="tea_video">
+          <div class="tea_health">
+                 <h1>Tea is a drink of  health and  beauty</h1> <br><br>
+
+                 <span id="beauty">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu <br>diam amet diam et eos. Clita erat ipsum et lorem et sit</span> <br> <br>
+
+                <button id="ex">Explore More</button>
+
+                <img src="mini images/tea cup img.jpg" alt="">
+          </div>
+           <div class="tea_video_play">
+          <video id="teavideo" src="mini images/8188514-uhd_2160_3840_25fps.mp4" controls ></video>
+        </div>
+        </div>
+      </div>
+       
+     
+  </body>
+</html>
